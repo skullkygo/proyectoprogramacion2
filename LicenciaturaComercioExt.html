@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LicenciaturaComercioExterior</title>
+    <title>Plataforma Universitaria</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
+        
         .centered-content {
             display: flex;
             justify-content: center;
@@ -18,11 +19,19 @@
         .card-body {
             align-items: center;
         }
+        .botcerrar {
+  border: 1px solid #3498db;
+border-radius: 5px; /* Ajusta según sea necesario */
+  padding: 1px 1px; /* Ajusta según sea necesario */
+  color: #3498db;
+}
 
         body {
             font-family: Arial, sans-serif;
-            background-image: url(imagenes/fondolicenciadocomercioexterior.jpeg);
-            text-align: center;
+            background-image: url(imagenes/unaf.jpg);
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat;
         }
 
         .titulo {
@@ -34,18 +43,12 @@
 
         .container {
             max-width: 500px;
-            /* Establecer un ancho máximo para el contenedor */
             margin: 0 auto;
-            /* Centrar el contenedor horizontalmente */
             background-color: #fff;
-            /* Agregar un fondo blanco al formulario */
             padding: 20px;
             border-radius: 10px;
-            /* Agregar esquinas redondeadas al formulario */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            /* Agregar una sutil sombra al formulario */
             margin-top: 100px;
-            /* Agregar un espacio en la parte superior */
         }
 
         h2 {
@@ -94,48 +97,64 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <img src="imagenes/logo_guarani.png" alt="Bootstrap" width="200" height="50">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="inicio.html">Inicio</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Publicar_Foro.php">Foro</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Notas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Consultas</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Materias
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="LicenciaturaComercioExt.html">Licenciatura Comercio Exterior</a></li>
-                  <li><a class="dropdown-item" href="ContadorPublico.html">Contador Publico</a></li>
+            <div class="container-fluid">
+              <a class="navbar-brand" href="inicio.html">Inicio</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="Publicar_Foro.php">Foro</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="autoridades.html">Autoridades</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     Institución
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="Historia_Unaf.html">Historia de la Institución</a></li>
+                      <li><a class="dropdown-item" href="unaf-img.html">UNAF Imagenes</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Materias
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="LicenciaturaComercioExt.html">Licenciatura Comercio Exterior</a></li>
+                      <li><a class="dropdown-item" href="ContadorPublico.html">Contador Público</a></li>
+                    </ul>
+                  </li>
                 </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
+                <ul class="navbar-nav ms-auto">
+                    <div class="botcerrar">
+                        <li class="nav-item a">
+                          <a class="nav-link active" href="index.html">Cerrar Sesión</a>
+                        </li>
+                      </ul>
+                    </div>
+              </div>
+            </div>
+          </nav>
+        </header>
     </header>
+    <br><br><br>
         <div class="centered-content">
             <div class="card" style="width: 40rem;">
-                <img src="imagenes/licenciadocomercioexterior.jpeg" class="card-img-top" alt="FondoLicenciaturaComercioExterior">
+                <img src="imagenes/comer-exterior.jpg" class="card-img-top" alt="FondoLicenciaturaComercioExterior">
                 <div class="card-body">
                     <h5 class="card-title">Licenciatura en Comercio Exterior</h5>
                     <p class="card-text">El licenciado en Comercio Internacional será un experto en las operatorias de
                         importación y exportación de productos, en los procesos de internacionalización de las empresas
                         y promoción de exportaciones, en el análisis de mercados y de productos y en la formulación y
                         evaluación de proyectos de comercio exterior.
-
+                        <br>
                         Estará capacitado para:
-
-                        Actuar en la actividad pública y privada, ya sea en empresas exportadoras/importadoras o de
+                        <br>
+                        Actuar en la actividad pública y privada, ya sea en empresas exportadoras / importadoras o de
                         servicios tales como bancos y entidades financieras, empresas de logística y transporte
                         internacional, empresas de servicios aduaneros y organismos nacionales e internacionales.
                         Elaborar estudios e investigaciones de mercado para concretar eficazmente las operaciones de
@@ -161,6 +180,7 @@
                 </ul>
             </div>
         </div>
+        <br><br><br>
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">

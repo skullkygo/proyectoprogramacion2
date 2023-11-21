@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Foro</title>
+  <title>Plataforma Universitaria</title>
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      background-image: url(imagenes/unaf.jpg);
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
     }
+    .botcerrar {
+  border: 1px solid #3498db;
+border-radius: 5px; /* Ajusta según sea necesario */
+  padding: 1px 1px; /* Ajusta según sea necesario */
+  color: #3498db;
+}
 
     .container {
       width: 80%;
@@ -40,7 +49,11 @@
 
     .card {
     margin-top: 20px;
-    background-color: #f8f9fa; /* Color de fondo del cuadro */
+    background-color: #f8f9fa;
+    }
+
+    .bg-custom-color {
+    background-color: #449FDC;
     }
 
   </style>
@@ -52,36 +65,50 @@
 <header>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <img src="imagenes/logo_guarani.png" alt="Bootstrap" width="200" height="50">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="inicio.html">Inicio</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Publicar_Foro.php">Foro</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Notas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Consultas</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Materias
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="LicenciaturaComercioExt.html">Licenciatura Comercio Exterior</a></li>
-                  <li><a class="dropdown-item" href="ContadorPublico.html">Contador Publico</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+      <img src="imagenes/logo_guarani.png" alt="Bootstrap" width="200" height="50">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="inicio.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="Publicar_Foro.php">Foro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="autoridades.html">Autoridades</a>
+            </li>
+            <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Institución
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Historia_Unaf.html">Historia de la Institución</a></li>
+            <li><a class="dropdown-item" href="unaf-img.html">UNAF Imagenes</a></li>
+          </ul>
+        </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Materias
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="LicenciaturaComercioExt.html">Licenciatura Comercio Exterior</a></li>
+                <li><a class="dropdown-item" href="ContadorPublico.html">Contador Público</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+          <div class="botcerrar">
+            <li class="nav-item a">
+              <a class="nav-link active" href="index.html">Cerrar Sesión</a>
+            </li>
+          </ul>
         </div>
-
+        </div>
+      </div>
+    </nav>
+  </header>
 </header>
 
 <div class="container">
@@ -102,12 +129,11 @@
   ?>
 
   <div class="card border-primary mb-3" style="max-width: 100%;">
-  <div class="card-header bg-transparent border-primary"><?php echo $row["tabla01_nombre"]; ?></div>
+  <div class="card-header bg-custom-color border-primary" style="font-size: 30px;"><?php echo $row["tabla01_tema"]; ?></div>
   <div class="card-body">
-    <h5 class="card-title"><?php echo $row["tabla01_tema"]; ?></h5>
+    <h5 class="card-title" style="font-size: 24px;">De: <?php echo $row["tabla01_nombre"]; ?></h5>
     <p class="card-text"><?php echo $row["tabla01_mensaje"]; ?></p>
 </div>
-
 </div>
 
   <?php
