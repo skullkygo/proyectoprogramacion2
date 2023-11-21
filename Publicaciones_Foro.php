@@ -77,17 +77,17 @@ border-radius: 5px; /* Ajusta según sea necesario */
               <a class="nav-link active" aria-current="page" href="Publicar_Foro.php">Foro</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="autoridades.html">Autoridades</a>
+              <a class="nav-link active" href="autoridades.php">Autoridades</a>
             </li>
             <li class="nav-item dropdown">
-          <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Institución
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="Historia_Unaf.html">Historia de la Institución</a></li>
-            <li><a class="dropdown-item" href="unaf-img.html">UNAF Imagenes</a></li>
-          </ul>
-        </li>
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Institución
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Historia_Unaf.html">Historia de la Institución</a></li>
+                <li><a class="dropdown-item" href="unaf-img.html">UNAF Imagenes</a></li>
+              </ul>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Materias
@@ -99,7 +99,7 @@ border-radius: 5px; /* Ajusta según sea necesario */
             </li>
           </ul>
           <ul class="navbar-nav ms-auto">
-          <div class="botcerrar">
+            <div class="botcerrar">
             <li class="nav-item a">
               <a class="nav-link active" href="index.html">Cerrar Sesión</a>
             </li>
@@ -109,7 +109,6 @@ border-radius: 5px; /* Ajusta según sea necesario */
       </div>
     </nav>
   </header>
-</header>
 
 <div class="container">
   <h2>Publicaciones</h2>

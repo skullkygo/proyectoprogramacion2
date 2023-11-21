@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "bd_foro";
+    $database = "autoridades";
 
     $conn = new mysqli($servername, $username, $password, $database);
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tema = $_POST["tema"];
     $mensaje = $_POST["mensaje"];
 
-    $sql = "INSERT INTO tabla_01_publicacion (tabla01_nombre, tabla01_tema,tabla01_mensaje) VALUES ('$nombre', '$tema', '$mensaje')";
+    $sql = "INSERT INTO datos_autoridades (cargo, nombre,correo) VALUES ('$nombre', '$tema', '$mensaje')";
 }
 ?>
 
@@ -140,6 +140,22 @@ a {
       background-color: #2980b9;
     }
 
+    .mensaje_exito {
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  background-color: green;
+  color: #fff;
+}
+
+.mensaje_error {
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  background-color: red;
+  color: #fff;
+}
+
   </style>
   <script>
     function ValidarPublicacion() {
@@ -218,30 +234,30 @@ a {
     </nav>
   </header>
   <div class="container">
-    <h2 class="titulo">Publicar Mensaje</h2>
+    <h2 class="titulo">Añadir Autoridad</h2>
     <form method="post">
       <div class="form-group">
-        <label for="nombre">Nombre:</label>
+        <label for="nombre">Cargo:</label>
         <input type="text" id="nombre" name="nombre" required>
       </div>
       <br>
       <div class="form-group">
-        <label for="tema">Tema:</label>
+        <label for="tema">Nombre:</label>
         <input type="text" id="tema" name="tema" required >
       </div>
       <br>
       <div class="form-group">
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="10" required ></textarea>
+        <label for="mensaje">email:</label>
+        <textarea id="mensaje" name="mensaje" required ></textarea>
       </div>
       <br>
       <div>
-      <button type="submit">Enviar</button>
+      <button type="submit">Añadir Autoridad</button>
       </div>
     </form>
   </div>
   <div>
-    <a class="publi-button" href="Publicaciones_Foro.php">Ver Publicaciones</a>
+    <a class="publi-button" href="autoridades.php">Ver Autoridades</a>
   </div>
 
   <?php
@@ -249,9 +265,9 @@ a {
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($nombre)) {
       if (mysqli_query($conn, $sql)) {
-        echo "<<p class='mensaje_exito'>¡La Publicacion se ha enviado Correctamente!</p>";
+        echo "<<p class='mensaje_exito'>¡Autoridad Añadida Correctamente!</p>";
       } else {
-        echo "<p class='mensaje_error'>Error al Enviar Publicacion: " . mysqli_error($conn) . "</p>";
+        echo "<p class='mensaje_error'>Error al añadir: " . mysqli_error($conn) . "</p>";
       }
     }
   }

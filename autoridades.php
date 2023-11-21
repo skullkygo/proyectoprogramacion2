@@ -7,19 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <style>
-      .navbar {
-        background-color: #fff;
-      }
-
-      html, body {
-        font-family: Arial, sans-serif;
-        height: 100%;
-        margin: 0;
-      }
-      .botcerrar {
+    .navbar {
+      background-color: #fff;
+    }
+    .botcerrar {
   border: 1px solid #3498db;
-border-radius: 5px; /* Ajusta según sea necesario */
-  padding: 1px 1px; /* Ajusta según sea necesario */
+border-radius: 5px; 
+  padding: 1px 1px; 
   color: #3498db;
 }
 
@@ -28,24 +22,53 @@ border-radius: 5px; /* Ajusta según sea necesario */
         background-image: url(imagenes/unaf.jpg);
         background-size: cover; 
         background-position: center; 
-        background-repeat: no-repeat; 
-      }
+        background-repeat: no-repeat;
+    }
 
-      h1 {
-        text-align: center;
-        font-weight: 800;
-        color: #3498db;
-        text-shadow: 2px 2px 4px rgb(252, 251, 251);
-      }
+    h1 {
+      margin: 0;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #333;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .publi-button {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .publi-button:hover {
+      background-color: #2980b9;
+    }
+
 
   </style>
 </head>
 <body>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
   <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <img src="imagenes/logo_guarani.png" alt="Bootstrap" width="200" height="50">
       <div class="container-fluid">
         <a class="navbar-brand" href="inicio.html">Inicio</a>
@@ -90,11 +113,71 @@ border-radius: 5px; /* Ajusta según sea necesario */
       </div>
     </nav>
   </header>
-  
-  <br><br><br><br><br><br><br><br>
-  <div class="container">
-    <h1>Bienvenido a <br>La Plataforma Universitaria</h1>
-  </div>
+  </header>
 
+<h1>Universidad Nacional de Formosa</h1>
+  <section>
+    <h2>Autoridades Universitarias</h2>
+
+    <h3>Rector</h3>
+    <p>Chat GPT<br>
+    Correo Electrónico: chatbot@inteligenciaia.edu</p>
+
+    <h3>Vicerrector Académico</h3>
+    <p>Licenciado Saporiti<br>
+    Correo Electrónico: vicerrector_academico@universidadxyz.edu</p>
+
+    <h3>Licenciado en Administracion de Empresas</h3>
+    <p>Arruabarrena Rodolfo<br>
+    Correo Electrónico: rodolfo@gmail.com</p>
+
+    <h3>Licenciado en Comercio Exterior</h3>
+    <p>Benitez Carlos<br>
+    Correo Electrónico: benitezcarlo@steam.com</p>
+
+    <h3>Licenciado en Contador Publico</h3>
+    <p>Bordon Mariano<br>
+    Correo Electrónico: marianobord@gmail.com</p>
+
+    <h3>Regente </h3>
+    <p>Bordon Ariel<br>
+    Correo Electrónico: arielbrn@universidad.com</p>
+
+    <h3>Coordinador</h3>
+    <p>Musso Franco<br>
+    Correo Electrónico: francomusso@gmail.com</p>
+
+    <div class="container">
+      <h2>Nuevos Cargos</h2>
+      <?php
+        $scon = mysqli_connect('localhost', 'root', '', 'autoridades');
+    
+        if (!$scon) {
+          die("Connection failed: " . mysqli_connect_error());
+        }
+    
+        $sql = "SELECT cargo, nombre, correo FROM datos_autoridades";
+    
+        $result = mysqli_query($scon, $sql);
+    
+        if (mysqli_num_rows($result) > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+      ?>
+    
+      <h3><?php echo $row["cargo"]; ?></h3>
+      <p><?php echo $row["nombre"]; ?> <br>Correo Elecronico: <?php echo $row["correo"]; ?></p>
+      
+      <?php
+          }
+        } else {
+          echo "<p>No hay mensajes disponibles.</p>";
+        }
+    
+        mysqli_close($scon);
+      ?>
+  </section>
+  <div>
+    <a class="publi-button" href="subir_autoridades.php">Añadir Autoridad</a>
+  </div>
 </body>
 </html>
